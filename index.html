@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Style 番茄钟</title>
+    <meta name="description" content="苹果风格毛玻璃桌面番茄钟界面。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <div class="ambient ambient-top"></div>
+    <div class="ambient ambient-bottom"></div>
+
+    <main class="glass-window">
+        <header class="window-topbar">
+            <div class="traffic-lights" aria-hidden="true">
+                <span class="light red"></span>
+                <span class="light yellow"></span>
+                <span class="light green"></span>
+            </div>
+            <button id="theme-btn" class="theme-btn" type="button" aria-label="切换深浅色模式">浅色</button>
+        </header>
+
+        <nav class="modes" aria-label="计时模式">
+            <button class="mode-btn active" type="button" data-mode="pomodoro" data-time="25">专注</button>
+            <button class="mode-btn" type="button" data-mode="shortBreak" data-time="5">短休</button>
+            <button class="mode-btn" type="button" data-mode="longBreak" data-time="15">长休</button>
+        </nav>
+
+        <section class="timer-panel" aria-live="polite">
+            <div class="progress-wrap">
+                <svg class="progress-ring" viewBox="0 0 240 240" role="img" aria-label="倒计时进度">
+                    <circle class="progress-track" cx="120" cy="120" r="102"></circle>
+                    <circle id="progress-bar" class="progress-bar" cx="120" cy="120" r="102"></circle>
+                </svg>
+                <div class="time-center">
+                    <p id="mode-label" class="mode-label">专注时间</p>
+                    <h1 id="time">25:00</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls" aria-label="控制按钮">
+            <button id="start-btn" class="control-btn primary" type="button">开始</button>
+            <button id="pause-btn" class="control-btn secondary" type="button" disabled>暂停</button>
+            <button id="reset-btn" class="control-btn tertiary" type="button">重置</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
